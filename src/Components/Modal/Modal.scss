@@ -1,0 +1,201 @@
+@import '../../Helpers/Variables.scss';
+.modal{
+    width: 440px;
+    height: 576px;
+    max-width: 90%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #FFFFFF;
+    border: 2px solid #01384D;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 40px;
+    &__close{
+        position: absolute;
+        right: 17px;
+        top: 17px;
+        border: none;
+        background-color: transparent;
+        padding: 5px;
+        cursor: pointer;
+        transition: .5s;
+        &:hover{
+            transform: rotate(180deg);
+            transition: .5s;
+        }
+    }
+    &__pending{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        &__spin{
+            width: 60px;
+            height: 60px;
+            margin: 30px auto;
+            border: 2px solid transparent;
+            border-top: 2px solid #01384D;
+            border-bottom: 2px solid #01384D;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: spin 3s linear infinite;
+        }
+        &--inner{
+            width: 40px;
+            height: 40px;
+            border: 2px solid transparent;
+            border-left: 2px solid #01384D;
+            border-right: 2px solid #01384D;
+            border-radius: 100%;
+            animation: spin-inner 1.5s linear infinite;
+        }
+    }
+    &__success{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &--title{
+            font-weight: 700;
+            font-size: 24px !important;
+            line-height: 40px;
+        }
+        &--img{
+            width: 100%;
+        }
+        &--text{
+            margin-top: 30px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19px;
+        }
+        &--btn{
+            @extend .modal__submit
+        }
+    }
+    &__fail{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        &--title{
+            font-size: 28px !important;
+            color: #B22727 !important;
+        }
+    }
+    &__title{
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 47px;
+        color: #01384D;
+        margin-bottom: 38px;
+        text-align: center;
+        
+    }
+    &__input{
+        @include input;
+        width: 100%;
+        &--tel{
+            @include input;
+            background-color: #FFFFFF;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            outline: none
+        }
+    }
+    &__label{
+        @include input;
+        margin-top: 25px;
+        display: grid;
+        padding: 0;
+        grid-template-columns: 20% 80%;
+        gap: 0;
+        border: none;
+        &--num{
+            @include input;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 19px;
+            color: #FFFFFF;
+            display: inline-block;
+            padding: 20px;
+            background-color: #01384D;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            
+        }
+        
+    }
+    &__amount{
+        display: block;
+        margin-top: 45px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 21px;
+        &--wrapper{
+            @include input;
+            border: none;
+            padding: 0;
+            margin-top: 12px;
+            display: grid;
+            grid-template-columns: 30% 40% 30%;
+            gap: 0;
+        }
+        &--value{
+            @include input;
+            border-radius: 0;
+        }
+    }
+    &__plus{
+        @include input;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: none;
+        
+        
+    }
+    &__minus{
+        @include input;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: none;
+        
+    }
+    &__plus, &__minus, &__amount--value{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        cursor: pointer
+    }
+    &__submit{
+        @include button;
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin-top: 50px;
+        background-color: #01384D;
+        color: #FFFFFF;
+        &:hover{
+            background-color: #FFFFFF;
+            color: #01384D
+        }
+    }
+}
+@keyframes spin {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin-inner {
+    100%{
+        transform: rotate(-360deg);
+    }
+}

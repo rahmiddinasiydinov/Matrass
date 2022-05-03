@@ -1,0 +1,106 @@
+@import '../../Helpers/Variables.scss';
+.interest{
+    background-color:#EABF9F ;
+    margin-top: 90px;
+    padding: 112px 0;
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 50px;
+    }
+    &__text{
+        font-size: 16px;
+        line-height: 23px;
+        margin-top: 10px;
+        color: #01384D;
+    }
+    &__form{
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+    &__label{
+        margin-top: 10px;
+        background: #FFFFFF;
+        border-radius: 5px;
+        padding: 20px 23px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        width: 420px ;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+    }
+    &__input{
+        margin-left: 12px;
+        padding: 0;
+        padding-left: 12px;
+        font-size: 16px;
+        line-height: 19px;
+        outline: none;
+        max-width: 100%;
+        &::placeholder{
+            color: rgba($color: #01384D, $alpha: .4);
+        }
+        border: none;
+        border-left: 1px solid rgba($color: #01384D, $alpha: .4);
+    }
+    &__btn{
+        margin-top: 10px;
+        @include button;
+        margin-left: 15px;
+        padding: 20px 82px;
+        display: block;
+        text-align: center;
+        color: #FFFFFF;
+        background-color: #01384D;
+        &:hover{
+            color: #01384D;
+            background-color: #FFFFFF;
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .interest{
+        margin-top: 70px;
+        padding: 70px 0;
+        &__wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+        &__title{
+            text-align: left;
+        }
+        &__text{
+            margin-top: 3px;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 23px;
+        }
+        &__form{
+            margin-top: 47px;
+            display: flex;
+        }
+        &__label{
+            padding: 15px 23px;
+        }
+        &__btn{
+            margin-left: 0;
+            margin-top: 20px;
+            padding: 15px 82px;
+            width: 100%;
+
+        }
+    }
+    
+}

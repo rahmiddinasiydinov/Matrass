@@ -1,0 +1,182 @@
+@import '../../Helpers/Variables.scss';
+.header{
+    &__nav{
+        padding: 19px 0;
+    }
+    &__list{
+        display: flex;
+        align-items: center;
+        justify-content:flex-end;
+    }
+    &__item{
+        margin-right: 50px;
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    &__link{
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #01384D;
+        transition: .3s;
+        &:hover{
+            color: #FFFFFF;
+            transition: .3s;
+            
+        }
+        &:active{
+            color: #00012D;
+        }
+    }
+    &__info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+    }
+    &__logo{
+        cursor: pointer;
+        fill:#01384D;
+        transition: .3s;
+        &:hover{
+            fill: #FFFFFF;
+            transition: .3s;
+        }
+        &:active{
+            fill: #00012D;
+        }
+    }
+    &__button{
+        &--group{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    }
+    &__btn{
+        &--phone{
+            margin-right: 12.5px;
+        }
+        &:first-child{
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
+            color: #01384D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 38px;
+        }
+        &:last-child{
+            @include button;
+            color: #01384D;
+            &:hover{
+                color: #FFFFFF;
+            }
+        }
+    }
+    &__title{
+        font-weight: 800;
+        font-size: 90px;
+        line-height: 105px;
+        color: #01384D;
+    }
+    &__slide{
+        padding-top: 68px;
+        height: 500px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        &--content{
+            width: 50%;
+        }
+        &--body{
+            width: 50%;
+            height: 100%;
+            position: relative;
+        }
+        &--img{
+            position: absolute;
+            bottom: 0;
+            right: 100px;
+            max-width: 100%;
+        }
+        
+    }
+    &__arrow{
+        margin-left: 15px;
+        transition: .3s;
+        
+    }
+    &__catalogue{
+        margin-top: 50px;
+        display: inline-block;
+        &:hover .header__arrow{
+            transform: scale(1.2) translateX(10px);
+            transition: .3s;
+        }
+    }
+     &__burger{
+            position: fixed;
+            background-color: #EABF9F;
+            padding: 15px 20px;
+            left: 0;
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            z-index: 5;
+        }
+}
+
+@media screen and (max-width:768px) {
+    .header{
+        &__nav{
+            display: none;
+        }
+        &__info{
+            display: none;
+        }
+        &__title{
+            font-family: 'Abril Fatface';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 41px;
+            line-height: 55px;
+        }
+        &__btn{
+            &:last-child{
+                position: absolute;
+                bottom: 70px;
+            }
+        }
+        &__slide{
+            flex-direction: column;
+            padding-top: 68px;
+            &--content{
+                margin-top: 50px;
+                width: 100%;
+            }
+            &--body{
+                width: 100%;
+                position: relative;
+                margin-top: 40px;
+            }
+            &--img{
+                position: static;
+            }
+            
+        }
+        &__arrow{
+            margin-left: 15px;
+            transition: .3s;
+            
+        }
+        &__burger{
+            display: flex;
+        }
+    }
+}

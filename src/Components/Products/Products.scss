@@ -1,0 +1,122 @@
+.products{
+    &__title{
+        margin-top: 20px;
+        margin-bottom: 64px;
+    }
+    &__list{
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+    &__notfound{
+        display: block;
+        font-weight: 700;
+        font-size: 32px;
+        text-align: center;
+        line-height: 40px;
+        color: #01384D;
+    }
+    &__pending{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color:#01384D;
+        &--disabled{
+            display: none;
+        }
+    }
+}
+
+.MuiTab{
+    &-root{
+        font-weight: 700 !important;
+        font-size: 16px !important;
+        line-height: 19px  !important;
+        color: #01384D !important;
+        opacity: .6 !important;
+        &:hover{
+            background: #01384D;
+            background-color: rgba($color: #01384D, $alpha: .1);
+            border-radius: 5px;
+            color: rgba($color: #01384D, $alpha:.6) !important;
+        }
+        
+    }
+}
+.MuiTabs-flexContainer{
+    display: flex !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+}
+.css-1aquho2-MuiTabs-indicator{
+    background-color: #01384D !important;
+}
+.Mui{
+    &-selected{
+        color:#01384D !important;
+        opacity: 1 !important;
+    }
+}
+.MuiTouchRipple-root{
+    border-color: #01384D !important;
+}
+
+@media screen and (max-width:768px) {
+    .mobile__container{
+        padding: 0 !important;
+    }
+    .products{
+        &__title{
+            margin-top: 90px;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 28px;
+            margin-bottom: 50px;
+        }
+        &__list{
+            display: flex !important;
+            justify-content: space-between !important;
+        }
+        &__notfound{
+            display: block;
+            font-weight: 700;
+            font-size: 24px;
+        }
+    }
+    
+    .MuiTab{
+        &-root{
+            font-weight: 700 !important;
+            font-size: 16px !important;
+            line-height: 19px  !important;
+            color: #01384D !important;
+            opacity: .6 !important;
+            &:hover{
+                background: #01384D;
+                background-color: rgba($color: #01384D, $alpha: .1);
+                border-radius: 5px;
+                color: rgba($color: #01384D, $alpha:.6) !important;
+            }
+            
+        }
+    }
+    .MuiTabs-flexContainer{
+        display: flex !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+    }
+    .css-1aquho2-MuiTabs-indicator{
+        background-color: #01384D !important;
+    }
+    .Mui{
+        &-selected{
+            color:#01384D !important;
+            opacity: 1 !important;
+        }
+    }
+    .MuiTouchRipple-root{
+        border-color: #01384D !important;
+    }
+    
+}

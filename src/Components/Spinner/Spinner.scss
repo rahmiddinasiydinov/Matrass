@@ -1,0 +1,35 @@
+.spinner{
+    position: fixed;
+    background-color: #FFF;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #01384D;
+    transition: 2s;
+    &__hide{
+      opacity: 0;
+      transition: 2s;
+    }
+    &__disable{
+        display: none;
+    }
+    &__load{
+        margin-top: 30px;
+        font-size: 24px;
+        color: #01384D;
+        font-weight: 600;
+        padding-left: 20px;
+        display: inline-block;
+        animation: load 1s linear infinite alternate;
+    }
+}
+
+@keyframes load {
+    100%{color: rgba($color: #01384D, $alpha: .1);}
+}

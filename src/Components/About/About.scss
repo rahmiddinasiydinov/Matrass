@@ -1,0 +1,113 @@
+.about{
+    margin-top: 140px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    column-gap: 10%;
+    grid-template-rows: 45% 45%;
+    row-gap: 10%;
+    &__title{
+        text-align: left;
+        width: 80%;margin-bottom: 26px;
+    }
+    &__text{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 26px;
+    }
+    &__list{
+        margin-top: 20px;
+        padding: 30px 50px;
+        list-style-type:disc;
+        background: #EABF9F;
+        border: 2px solid #01384D;
+        box-sizing: border-box;
+        border-radius: 8px;
+        &--ordered{
+            @extend .about__list;
+            list-style-type: decimal;
+            &>li:before{
+                font-weight: 600;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 21px;
+            }
+        }
+    }
+    &__item{
+        margin-bottom: 14px;
+        font-size: 16px;
+        line-height: 19px;
+        color: #01384D;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    &__video{
+        width: 100%;
+        max-width: 100%;
+        border: none;
+    }
+    &__desc{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .about{
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        &:last-child{
+            flex-direction: column-reverse;
+        }
+        &__title{
+            text-align: left;
+            width: 100%;
+            margin-bottom: 30px;
+            font-size: 28px;
+            line-height: 36px;
+        }
+        &__text{
+            line-height: 20px;
+        }
+        &__list{
+            margin-top: 20px;
+            padding: 30px 50px;
+            list-style-type:disc;
+            background: #EABF9F;
+            border: 2px solid #01384D;
+            box-sizing: border-box;
+            border-radius: 8px;
+            &--ordered{
+                list-style-type: decimal;
+                &>li:before{
+                    font-weight: 600;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 21px;
+                }
+            }
+        }
+        &__item{
+            margin-bottom: 14px;
+            font-size: 16px;
+            line-height: 19px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        &__video{
+            width: 100%;
+            max-width: 100%;
+            border: none;
+        }
+        &__wrapper{
+            margin-top: 30px;
+        }
+    }
+    
+}

@@ -1,0 +1,77 @@
+@import '../../Helpers/Variables.scss';
+.mobile{
+    &__list{
+        position: fixed;
+        height: 100%;
+        background-color: #EABF9F;
+        padding: 60px 0 0 0;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transition: .5s ease-in;
+        transform: translateY(-100%);
+        overflow: hidden;
+        
+    }
+    &__active{
+        transform: translateY(0);
+        transition: .5s ease-out;
+    }
+    &__link{
+        color: #01384D;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 24px;
+        width: 110px;
+        &--last{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 30px;
+        }
+    }
+    &__item{
+        margin-bottom: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+        width: 100%;
+        color: #01384D;
+        &:first-child{
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        &:last-child{
+            
+            position: absolute;
+            padding: 30px;
+            bottom: 0;
+            width: 100%;
+            background-color: #FFFFFF;
+            margin-bottom: 0;
+        }
+    }
+    &__logo{
+        color: #01384D;
+        fill: #01384D;
+        
+    }
+    &__phone{
+        margin-right: 13px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__order{
+        @include button
+    }
+    
+}
