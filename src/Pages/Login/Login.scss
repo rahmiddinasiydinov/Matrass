@@ -1,0 +1,68 @@
+@import '../../Helpers/Variables.scss';
+.login{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    font-family: 'Montserrat';
+    &__wrapper{
+        width: 330px;
+        max-width: 100%;
+        padding: 35px 30px 30px;
+        background: #FFFFFF;
+        border: 1px solid #01384D;
+        border-radius: 10px;
+    }
+    &__title{
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        font-family: 'Montserrat';
+        text-align: center;
+    }
+    &__form{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+    }
+    &__label{
+        width: 100%;
+        padding: 16px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #01384D;
+        border-radius: 7px;
+        &:first-child{
+            margin-bottom: 13px;
+        }
+    }
+    &__input{
+        padding: 0;
+        border: none;
+        outline:none;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        &::placeholder{
+            color: rgba($color: #01384D, $alpha: .5);
+        }
+    }
+    &__svg{
+        margin-right: 10px;
+    }
+    &__btn{
+        margin-top: 35px;
+        @include button;
+        color: #FFFFFF;
+        background-color: #01384D;
+        &:hover{
+            background-color: #FFFFFF;
+            color: #01384D;
+        }
+    }
+}

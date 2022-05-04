@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
 import { Routes, Route } from 'react-router';
 import './App.scss';
 import Home from './Pages/Home/Home';
-import {Spinner} from './Components/Spinner/Spinner'
+import Login from './Pages/Login/Login';
+import { Spinner } from './Components/Spinner/Spinner';
+import { NotFound } from './Pages/NotFound/NotFound';
+
 function App() {
-  const [load, setLoad] = useState<boolean>(false);
-  const handleLoad = () => setLoad(true);
-  console.log(load);
-  
   return (
-    <div className="App" onLoad={handleLoad}>
-      <Spinner loaded={load}/>
+    <div className="App">
+      <Spinner/>
       <Routes>
-        <Route path='/' element={<Home/>}/>
-     </Routes>
+        <Route path="/"        element={<Home />}       />
+        <Route path='/login' element={<Login />} />
+        <Route path='/*' element={<NotFound />}/>
+      </Routes>
     </div>
   );
 }

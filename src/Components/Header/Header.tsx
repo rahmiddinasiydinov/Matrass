@@ -8,7 +8,9 @@ import { ReactComponent as Phone } from "../../Assets/Images/Phone.svg";
 import { NavLink } from "react-router-dom";
 import { SlideComponent } from './SlideComponent';
 import { MobileMenu } from '../Mobile/Mobile';
+import { loaderAction } from "../../Redux/ReduxSlices/LoadSlic";
 import { Cross as Hamburger } from "hamburger-react";
+import { useDispatch } from "react-redux";
 
     
 interface Iintro{
@@ -22,14 +24,19 @@ interface Iintro{
 
 
 export const Header: React.FC = () => {
+  const [isOpen, setOpen] = React.useState(false);
   const [info, setInfo] = React.useState<Iintro | null>(null);
-    const [isOpen, setOpen] = React.useState(false);
+  
+  
+  const dispatch = useDispatch();
+  
   React.useEffect(() => {
     fetch("https://matrassesapp.herokuapp.com/api/intro")
       .then(res => res.json())
       .then(data => {
         console.log(data);
         setInfo(data[0]);
+        dispatch(loaderAction.handleLoad(true));
       });
   }, [])
 const handleClose:any =()=>{setOpen(false)}
