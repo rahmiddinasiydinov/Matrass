@@ -1,13 +1,11 @@
 import './Login.scss';
 import { ReactComponent as Lock } from '../../Assets/Images/lock.svg';
 import { ReactComponent as Profile} from '../../Assets/Images/profile.svg';
-import { useNavigate } from 'react-router';
 import { loaderAction } from '../../Redux/ReduxSlices/LoadSlic';
 import { useDispatch } from 'react-redux';
 
 export default function Login() {
     const dispatch = useDispatch();
-    const navigate = useNavigate();
       dispatch(loaderAction.handleLoad(true));
     const handleLogin = (e:any )=> {
         e.preventDefault();
@@ -28,7 +26,9 @@ export default function Login() {
                 console.log(data);
                 if (data.length > 10) {
                     dispatch(loaderAction.handleLoad(false))
-                     navigate("/"); 
+                     window.location.assign(
+                       `https://matras-admin.netlify.app`
+                     )  
                 }
                    
                 
