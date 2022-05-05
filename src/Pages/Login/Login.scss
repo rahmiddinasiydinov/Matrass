@@ -65,4 +65,13 @@
             color: #01384D;
         }
     }
+    &__text{
+        color: red;
+        opacity: 0;
+        transition: .5s;
+        &--active{
+            transition: .5s;
+            opacity: 1;
+        }
+    }
 }

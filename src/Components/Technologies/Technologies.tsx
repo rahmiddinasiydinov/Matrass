@@ -63,7 +63,7 @@ export const Technologies: React.FunctionComponent = () => {
               <SwiperSlide key={i}>
                 {" "}
                 <li className="techno__item">
-                  <TechnoCard desc={e.text} name={e.name} video={video[i]} />
+                  <TechnoCard desc={e.text} name={e.name} video={video[i]}/>
                 </li>
               </SwiperSlide>
             );
