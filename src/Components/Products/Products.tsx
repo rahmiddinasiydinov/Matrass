@@ -45,12 +45,12 @@ export  interface IProduct{
 export default function Products() {
   const [value, setValue] = React.useState(0);
   const [data, setData] = React.useState<IProduct[] | null>(null);
+  const [discount, setDiscount] = React.useState<IProduct[] | null>(null);
   const [category, setCategory] = React.useState<Icategory[] | null>(null);
   const [currentCat, setCurrentCut] = React.useState<number | null>(null);
   const [pending, setpending] = React.useState<boolean>(true);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
-    setCurrentCut(newValue);
     
   };
   React.useEffect(() => {
@@ -58,7 +58,7 @@ export default function Products() {
       .then(res => res.json())
       .then(data => {
         setCategory(data);
-        setCurrentCut(data[0]);
+        setCurrentCut(data[0]?.id);
       });
   }, []);
   React.useEffect(() => {
@@ -67,9 +67,10 @@ export default function Products() {
       .then(data => {
         setpending(false)
         console.log(data);
-        
+        console.log(currentCat);
+        setDiscount([...data.filter((e:IProduct)=>e.isDiscount)])
         if (currentCat || currentCat===0) {
-          setData([...data.filter((e:IProduct)=>e.categoryId===currentCat)])
+          setData([...data.filter((e:IProduct)=>e.categoryId==currentCat)])
         } else {
           setData(data);
         }
@@ -96,6 +97,9 @@ export default function Products() {
                   className="product__tab"
                   label={e.model}
                   {...a11yProps(e.id)}
+                  onClick={() => {
+                    setCurrentCut(e.id);
+                  }}
                 />
               );
             })}
@@ -114,10 +118,14 @@ export default function Products() {
         <TabPanel value={value} index={2}>
           Item Three
         </TabPanel> */}
-        <div className={`products__pending ${!pending?'products__pending--disabled':""}`}>
+        <div
+          className={`products__pending ${
+            !pending ? "products__pending--disabled" : ""
+          }`}
+        >
           <CircularProgress color="inherit" size={50} />
         </div>
-        { !pending && data?.length === 0 ? (
+        {!pending && data?.length === 0 ? (
           <span className="products__notfound">
             Kechirasiz, bu modelda Mahsulot qolmadi.
           </span>
@@ -144,6 +152,30 @@ export default function Products() {
             );
           })
         )}
+      </div>
+      <div className="container">
+        <h2 className="products__discount">Aksiyadagi mahsulotlar</h2>
+        {discount?.map((e: IProduct, i) => {
+          return (
+            <Cards
+              key={i}
+              capacity={e.capacity}
+              categoryId={e.categoryId}
+              description={e.description}
+              discount_price={e.discount_price}
+              id={e.id}
+              img={e.img}
+              isNew={e.isNew}
+              size={e.size}
+              price={e.price}
+              title={e.title}
+              isDiscount={e.isDiscount}
+              updatedAt={e.updatedAt}
+              waranty={e.waranty}
+              yuklama={e.yuklama}
+            />
+          );
+        })}
       </div>
     </Box>
   );
