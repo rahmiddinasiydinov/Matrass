@@ -25,7 +25,8 @@ export default function Login() {
             .then(data => {
                 console.log(data);
                 if (data.length > 10) {
-                    dispatch(loaderAction.handleLoad(false))
+                  dispatch(loaderAction.handleLoad(false));
+                  window.localStorage.setItem('token', data);
                      window.location.assign(
                        `https://matras-admin.netlify.app`
                      )  
