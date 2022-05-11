@@ -18,7 +18,7 @@ export const Cards: React.FC<IProduct> = ({
               price,
               size,
               title,
-              waranty,
+              warranty,
               yuklama,
 }) => {
    const [open, setOpen] = useState<boolean>(false);
@@ -27,7 +27,7 @@ export const Cards: React.FC<IProduct> = ({
 
   return (
     <div className="card" data-id={id}>
-      <Modal open={open} handleClose={handleClose} id={id}/>
+      <Modal open={open} handleClose={handleClose} id={id} />
       <div className="card__buttons">
         {isNew ? (
           <button className="card__buttons--item">Yangi Mahsulot</button>
@@ -44,7 +44,11 @@ export const Cards: React.FC<IProduct> = ({
         <button className="card__lupa--wrapper">
           <Lupa className="card__lupa" />
         </button>
-        <img src={cardImg} alt={title} className="card__img" />
+        <img
+          src={cardImg}
+          alt={title}
+          className="card__img"
+        />
       </div>
       <div className="card__content">
         <h3 className="card__title">{title}</h3>
@@ -55,7 +59,7 @@ export const Cards: React.FC<IProduct> = ({
           </li>
           <li className="card__item">
             <span className="card__item--title">Kafolat</span>
-            <span className="card__item--info">{waranty} yil</span>
+            <span className="card__item--info">{warranty} yil</span>
           </li>
           <li className="card__item">
             <span className="card__item--title">O’lchami</span>

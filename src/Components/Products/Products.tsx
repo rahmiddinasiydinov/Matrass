@@ -32,16 +32,17 @@ export  interface IProduct{
   description: string,
   discount_price: number, 
   id: number, 
-  img: string, 
+  img: string[], 
   isDiscount: boolean, 
   isNew: boolean, 
   price: number, 
   size: string, 
   title: string,
   updatedAt: string, 
-  waranty: number, 
+  warranty: number, 
   yuklama:number
 }
+
 export default function Products() {
   const [value, setValue] = React.useState(0);
   const [data, setData] = React.useState<IProduct[] | null>(null);
@@ -146,7 +147,7 @@ export default function Products() {
                 title={e.title}
                 isDiscount={e.isDiscount}
                 updatedAt={e.updatedAt}
-                waranty={e.waranty}
+                warranty={e.warranty}
                 yuklama={e.yuklama}
               />
             );
@@ -171,7 +172,7 @@ export default function Products() {
               title={e.title}
               isDiscount={e.isDiscount}
               updatedAt={e.updatedAt}
-              waranty={e.waranty}
+              warranty={e.warranty}
               yuklama={e.yuklama}
             />
           );

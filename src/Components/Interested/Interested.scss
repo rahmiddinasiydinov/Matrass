@@ -65,6 +65,33 @@
             background-color: #FFFFFF;
         }
     }
+    &__sent{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        &--title{
+            font-family: 'Josefin Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 44px;
+            text-align: center;
+            color: #01384D;
+        }
+        &--text{
+            font-family: 'Josefin Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+            color: #01384D;
+            margin-top: 15px;
+        }
+    }
+    &__disabled{
+        display: none;
+    }
 }
 
 @media screen and (max-width:768px) {
@@ -72,7 +99,6 @@
         margin-top: 70px;
         padding: 70px 0;
         &__wrapper{
-            display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
@@ -99,7 +125,7 @@
             margin-top: 20px;
             padding: 15px 82px;
             width: 100%;
-
+            
         }
     }
     
